@@ -259,16 +259,29 @@ public class FragmentUtil {
     }
 	
 	/**
-	 * I show a v4 fragment on the content with a provided tag
+	 * I show a v4 fragment on the content with a provided tag and back stack argument
 	 * @param fragmentManager
 	 * @param frag
 	 * @param backStackArg
 	 * @param tag
 	 */
 	public static void showV4FragmentOnContentWithTag(android.support.v4.app.FragmentManager fragmentManager, android.support.v4.app.Fragment frag, String backStackArg, String tag){
-		android.support.v4.app.FragmentTransaction ft = fragmentManager.beginTransaction();
-    	showV4FragmentOnContentWithTag(ft, frag, tag);
+		showV4FragmentOnContentWithTag(fragmentManager, frag, backStackArg, tag, null);
     }
+	
+	/**
+	 * I show a v4 fragment on the content with a provided tag, back stack argument and animation
+	 * @param fragmentManager
+	 * @param frag
+	 * @param backStackArg
+	 * @param tag
+	 * @param animation
+	 */
+	public static void showV4FragmentOnContentWithTag(android.support.v4.app.FragmentManager fragmentManager, android.support.v4.app.Fragment frag, String backStackArg, String tag, FragmentSlideAnimation animation){
+		android.support.v4.app.FragmentTransaction ft = fragmentManager.beginTransaction();
+    	showV4FragmentOnContentWithTag(ft, frag, backStackArg, tag, animation);
+    }
+	
     /**
      * I show a v4 fragment on the content with a provided tag
      * @param fragmentTransaction
@@ -279,7 +292,7 @@ public class FragmentUtil {
 		showV4FragmentOnContentWithTag(fragmentTransaction, frag, null, tag);
     }
 	/**
-	 * I show a v4 fragment on the content with a provided tag
+	 * I show a v4 fragment on the content with a provided tag and back stack argument
 	 * @param fragmentTransaction
 	 * @param frag
 	 * @param backStackArg
@@ -290,7 +303,7 @@ public class FragmentUtil {
     }
 	
 	/**
-	 * I show a v4 fragment on the content with a provided tag
+	 * I show a v4 fragment on the content with a provided tag, back stack argument and animation
 	 * @param fragmentTransaction
 	 * @param frag
 	 * @param backStackArg
